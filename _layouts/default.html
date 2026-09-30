@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1a73e8">
+  <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+</head>
+<body>
+{%- comment -%} Lista plana de clases con resumen, para Anterior/Siguiente {%- endcomment -%}
+{%- assign todas = "" | split: "" -%}
+{%- for s in site.data.curso -%}{%- for c in s.clases -%}{%- if c.url -%}{%- assign todas = todas | push: c -%}{%- endif -%}{%- endfor -%}{%- endfor -%}
+{%- assign idx = nil -%}
+{%- for c in todas -%}{%- if c.url == page.url -%}{%- assign idx = forloop.index0 -%}{%- endif -%}{%- endfor -%}
+
+<header class="topbar">
+  <button id="menu-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="drawer">☰</button>
+  <a class="brand" href="{{ '/' | relative_url }}">☁️ {{ site.title }}</a>
+</header>
+
+<div id="overlay" hidden></div>
+
+<nav id="drawer" aria-label="Contenido del curso">
+  <a class="home{% if page.url == '/' %} active{% endif %}" href="{{ '/' | relative_url }}">🏠 Inicio</a>
+  {%- for s in site.data.curso %}
+  {%- assign hechas = s.clases | where_exp: "c", "c.url" | size %}
+  <details{% if page.seccion == s.seccion %} open{% endif %}>
+    <summary>
+      <span>Sección {{ s.seccion }}: {{ s.titulo }}</span>
+      <span class="count">{{ hechas }}/{{ s.clases | size }}</span>
+    </summary>
+    <ul>
+      {%- for c in s.clases %}
+      <li>
+        {%- if c.url -%}
+        <a href="{{ c.url | relative_url }}"{% if c.url == page.url %} class="active" aria-current="page"{% endif %}>{{ c.n }}. {{ c.titulo }}</a>
+        {%- else -%}
+        <span class="pending">{{ c.n }}. {{ c.titulo }}</span>
+        {%- endif -%}
+      </li>
+      {%- endfor %}
+    </ul>
+  </details>
+  {%- endfor %}
+</nav>
+
+<main>
+  {%- if page.seccion %}
+  {%- assign sec = site.data.curso | where: "seccion", page.seccion | first %}
+  <p class="crumb">Sección {{ page.seccion }} · {{ sec.titulo }} — Clase {{ page.clase }}</p>
+  {%- endif %}
+  {%- if page.title %}<h1>{{ page.title }}</h1>{% endif %}
+
+  {{ content }}
+
+  {%- if idx != nil %}
+  {%- assign prev_i = idx | minus: 1 %}
+  {%- assign next_i = idx | plus: 1 %}
+  <nav class="pager" aria-label="Clases">
+    {%- if idx > 0 %}{% assign p = todas[prev_i] %}
+    <a class="prev" href="{{ p.url | relative_url }}"><small>← Anterior</small>{{ p.titulo }}</a>
+    {%- else %}<span></span>{% endif %}
+    {%- if next_i < todas.size %}{% assign n = todas[next_i] %}
+    <a class="next" href="{{ n.url | relative_url }}"><small>Siguiente →</small>{{ n.titulo }}</a>
+    {%- endif %}
+  </nav>
+  {%- endif %}
+</main>
+
+<script>
+  (function () {
+    var btn = document.getElementById('menu-btn');
+    var overlay = document.getElementById('overlay');
+    function toggle(open) {
+      document.body.classList.toggle('menu-open', open);
+      btn.setAttribute('aria-expanded', open);
+      overlay.hidden = !open;
+    }
+    btn.addEventListener('click', function () { toggle(!document.body.classList.contains('menu-open')); });
+    overlay.addEventListener('click', function () { toggle(false); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') toggle(false); });
+  })();
+</script>
+</body>
+</html>

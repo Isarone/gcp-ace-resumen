@@ -1,4 +1,11 @@
-title: Resumen GCP – Associate Cloud Engineer
-description: Apuntes interactivos del curso para repasar desde el celular
-theme: jekyll-theme-cayman
+title: GCP ACE · Resumen
+description: Apuntes interactivos del curso Associate Cloud Engineer para repasar desde el celular
 lang: es
+baseurl: /gcp-ace-resumen
+permalink: pretty
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default

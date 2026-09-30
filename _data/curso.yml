@@ -1,0 +1,19 @@
+# Estructura del curso. Una clase con `url` tiene resumen; sin `url` aparece como pendiente.
+- seccion: 1
+  titulo: Introducción
+  clases:
+    - n: 1
+      titulo: Visión general de la computación en nube
+    - n: 2
+      titulo: Principales modelos de servicio en la nube
+      url: /secciones/s01/02-modelos-servicio/
+    - n: 3
+      titulo: Infraestructura global de Google Cloud
+    - n: 4
+      titulo: Capa gratuita de Google Cloud
+    - n: 5
+      titulo: Calculadora de precios de Google Cloud
+    - n: 6
+      titulo: Formas de interactuar con Google Cloud
+    - n: 7
+      titulo: Descarga de material
