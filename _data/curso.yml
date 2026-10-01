@@ -22,3 +22,28 @@
       url: /secciones/s01/06-formas-interactuar/
     - n: 7
       titulo: Descarga de material
+
+- seccion: 2
+  titulo: "Módulo 1: Configuración inicial en Google Cloud"
+  clases:
+    - n: 1
+      titulo: Configurando una cuenta de Google Cloud Platform
+      url: /secciones/s02/01-configurar-cuenta/
+    - n: 2
+      titulo: Explorando la consola de GCP
+    - n: 3
+      titulo: Jerarquía de recursos en Google Cloud
+    - n: 4
+      titulo: Creación y gestión de proyectos
+    - n: 5
+      titulo: Cuentas de facturación
+    - n: 6
+      titulo: Configuración de presupuestos y alertas de facturación
+    - n: 7
+      titulo: Configurando exportaciones de facturación
+    - n: 8
+      titulo: Evaluación de cuotas y solicitud de aumentos
+    - n: 9
+      titulo: Habilitación de APIs y servicios
+    - n: 10
+      titulo: Instalación y configuración de Google Cloud CLI y SDK de Cloud
