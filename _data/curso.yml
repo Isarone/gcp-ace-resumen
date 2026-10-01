@@ -4,6 +4,7 @@
   clases:
     - n: 1
       titulo: Visión general de la computación en nube
+      url: /secciones/s01/01-vision-general/
     - n: 2
       titulo: Principales modelos de servicio en la nube
       url: /secciones/s01/02-modelos-servicio/
