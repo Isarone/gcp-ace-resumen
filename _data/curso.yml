@@ -37,8 +37,10 @@
       url: /secciones/s02/03-jerarquia-recursos/
     - n: 4
       titulo: Creación y gestión de proyectos
+      url: /secciones/s02/04-proyectos/
     - n: 5
       titulo: Cuentas de facturación
+      url: /secciones/s02/05-cuentas-facturacion/
     - n: 6
       titulo: Configuración de presupuestos y alertas de facturación
     - n: 7
