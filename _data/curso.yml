@@ -43,11 +43,15 @@
       url: /secciones/s02/05-cuentas-facturacion/
     - n: 6
       titulo: Configuración de presupuestos y alertas de facturación
+      url: /secciones/s02/06-presupuestos-alertas/
     - n: 7
       titulo: Configurando exportaciones de facturación
+      url: /secciones/s02/07-exportaciones-facturacion/
     - n: 8
       titulo: Evaluación de cuotas y solicitud de aumentos
+      url: /secciones/s02/08-cuotas/
     - n: 9
       titulo: Habilitación de APIs y servicios
+      url: /secciones/s02/09-habilitar-apis/
     - n: 10
       titulo: Instalación y configuración de Google Cloud CLI y SDK de Cloud
