@@ -31,8 +31,10 @@
       url: /secciones/s02/01-configurar-cuenta/
     - n: 2
       titulo: Explorando la consola de GCP
+      url: /secciones/s02/02-consola/
     - n: 3
       titulo: Jerarquía de recursos en Google Cloud
+      url: /secciones/s02/03-jerarquia-recursos/
     - n: 4
       titulo: Creación y gestión de proyectos
     - n: 5
