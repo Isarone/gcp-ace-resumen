@@ -95,6 +95,7 @@ blockquote p { margin: 4px 0; }
 code { background: var(--bg-soft); padding: 1px 5px; border-radius: 4px; font-size: .9em; }
 pre { background: var(--bg-soft); padding: 12px; border-radius: 8px; overflow-x: auto; font-size: 13px; }
 pre code { background: none; padding: 0; }
+img { max-width: 100%; height: auto; border-radius: 10px; background: #fff; }
 hr { border: 0; border-top: 1px solid var(--border); margin: 2rem 0; }
 
 /* Tablas: scroll horizontal en pantallas chicas */
